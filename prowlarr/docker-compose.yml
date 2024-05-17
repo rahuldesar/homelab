@@ -1,0 +1,22 @@
+services:
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kathmandu
+    volumes:
+      - $HOMELAB_DATA_DIR/prowlarr_data:/config
+    dns:
+      - 8.8.8.8
+      - 4.4.4.4
+    ports:
+      - 9696:9696
+    restart: unless-stopped
+    networks:
+      - media-server
+
+networks:
+  media-server:
+    external: true
