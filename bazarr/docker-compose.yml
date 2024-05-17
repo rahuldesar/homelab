@@ -1,0 +1,25 @@
+services:
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    container_name: bazarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kathmandu
+    volumes:
+      - $HOMELAB_DIR/homelab_data/bazar_data/bazarr/config:/config
+      - /jellyfin/movies:/movies #optional
+      - /jellyfin/tv:/tv #optional
+    dns:
+      - 8.8.8.8
+      - 4.4.4.4
+    ports:
+      - 6767:6767
+    restart: unless-stopped
+    networks:
+      - media-server
+
+networks:
+  media-server:
+    external: true
+

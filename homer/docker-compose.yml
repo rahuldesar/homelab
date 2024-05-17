@@ -1,0 +1,13 @@
+# Comment
+version: '3'
+
+services:
+  homer:
+    image: b4bz/homer:v24.04.1
+    container_name: homer_xps
+    hostname: homer
+    volumes:
+      - ./homer-data:/www/assets
+    ports:
+      - "8080:8080"
+    restart: always

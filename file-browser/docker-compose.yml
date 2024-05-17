@@ -1,0 +1,16 @@
+name: filebrowser
+services:
+    filebrowser:
+        volumes:
+            - $HOMELAB_DATA_DIR/file-browser_data/config/srv:/srv
+            - $HOMELAB_DATA_DIR/file-browser_data/config/database/filebrowser.db:/database/filebrowser.db
+            - $HOMELAB_DATA_DIR/file-browser_data/config/settings.json:/config/settings.json
+        environment:
+            - PUID=$(id -u)
+            - PGID=$(id -g)
+        user: ""
+        restart: always
+        ports:
+            - 9001:80
+        image: filebrowser/filebrowser:s6
+

@@ -1,0 +1,10 @@
+caddy/
+nextcloud/
+
+homelab_data/
+
+.env 
+*/.env
+
+
+
