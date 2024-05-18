@@ -1,8 +1,9 @@
-# Home Lab 
+# HomeLab Contents
+- Network wide AdBlocking (Note: Pihole doesn't work for Youtube)
 - Media server 
+- Torrent Automation
 - File server
 - Photos Backup 
-- Network wide AdBlocking 
 - Notification on Discord using webhooks. 
 
 ## Dashboard
@@ -17,7 +18,7 @@ To find userId and groupId of current user, `$(id -u)` and `$(id -g)`
 
 ## TODO: 
 
-- [ ] Podcast server
+- [ ] Audiobook server
 - [ ] Book/Ebook reader 
 - [ ] Identity provider
 - [ ] Media Discovery Tool
