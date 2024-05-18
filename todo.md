@@ -1,0 +1,4 @@
+---
+- [ ] kavita
+- [ ] audiobookshelf
+- [ ] paperless-ngx
