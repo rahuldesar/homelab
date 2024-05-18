@@ -6,5 +6,6 @@ homelab_data/
 .env 
 */.env
 
+*/user-pass
 
-
+pi-hole/etc*

@@ -1,0 +1,25 @@
+services:
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kathmandu
+    volumes:
+      - $HOMELAB_DATA_DIR/radar_data/data:/config
+      - /jellyfin/movies:/movies #optional
+      - $HOME/Downloads/qbittorrent:/downloads #optional
+    dns:
+      - 8.8.8.8
+      - 4.4.4.4
+    ports:
+      - 7878:7878
+    restart: unless-stopped
+    networks:
+      - media-server
+
+networks:
+  media-server:
+    external: true
+
