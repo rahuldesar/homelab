@@ -1,0 +1,25 @@
+services:
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kathmandu
+    volumes:
+      - $HOMELAB_DATA_DIR/sonar_data/data:/config
+      - /jellyfin/tv:/tv #optional
+      - $HOME/Downloads/qbittorrent:/downloads #optional
+    dns:
+      - 8.8.8.8
+      - 4.4.4.4
+    ports:
+      - 8989:8989
+    restart: unless-stopped
+    networks:
+      - media-server
+
+networks:
+  media-server:
+    external: true
+
