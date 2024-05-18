@@ -6,8 +6,8 @@ services:
             - $HOMELAB_DATA_DIR/file-browser_data/config/database/filebrowser.db:/database/filebrowser.db
             - $HOMELAB_DATA_DIR/file-browser_data/config/settings.json:/config/settings.json
         environment:
-            - PUID=$(id -u)
-            - PGID=$(id -g)
+            - PUID=1000
+            - PGID=1000
         user: ""
         restart: always
         ports:
