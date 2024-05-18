@@ -9,3 +9,6 @@ homelab_data/
 */user-pass
 
 pi-hole/etc*
+
+immich/postgres
+immich/library
